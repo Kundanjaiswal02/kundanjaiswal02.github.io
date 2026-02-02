@@ -1,3 +1,21 @@
+// Typewriter Effect
+const typewriterText = "Business Analytics Professional";
+const typewriterElement = document.querySelector('.typewriter');
+let charIndex = 0;
+
+function typeWriter() {
+    if (charIndex < typewriterText.length) {
+        typewriterElement.textContent += typewriterText.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeWriter, 100); // Speed of typing (100ms per character)
+    }
+}
+
+// Start typewriter effect after page loads
+window.addEventListener('load', () => {
+    setTimeout(typeWriter, 1000); // Delay before starting (1 second)
+});
+
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
@@ -48,31 +66,6 @@ function updateActiveLink() {
 
 window.addEventListener('scroll', updateActiveLink);
 
-// Animate skill bars on scroll
-const skillBars = document.querySelectorAll('.skill-level');
-let skillsAnimated = false;
-
-function animateSkills() {
-    const skillsSection = document.querySelector('.skills');
-    if (!skillsSection) return;
-
-    const skillsPosition = skillsSection.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.3;
-
-    if (skillsPosition < screenPosition && !skillsAnimated) {
-        skillBars.forEach(bar => {
-            const width = bar.style.width;
-            bar.style.width = '0';
-            setTimeout(() => {
-                bar.style.width = width;
-            }, 100);
-        });
-        skillsAnimated = true;
-    }
-}
-
-window.addEventListener('scroll', animateSkills);
-
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -104,7 +97,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe all cards and timeline items
 const animateElements = document.querySelectorAll(
-    '.experience-card, .project-card, .timeline-item, .skill-category, .contact-item'
+    '.experience-card, .project-card, .timeline-item, .skill-logo-card, .contact-item'
 );
 
 animateElements.forEach(el => {
@@ -134,6 +127,6 @@ window.addEventListener('scroll', () => {
 });
 
 // Console log for developers
-console.log('%c👋 Hi there!', 'font-size: 20px; font-weight: bold; color: #e94560;');
-console.log('%cLooking at the code? This portfolio was built with HTML, CSS, and vanilla JavaScript.', 'font-size: 14px; color: #666;');
-console.log('%cFeel free to reach out: Kundanjaiswal233@gmail.com', 'font-size: 14px; color: #0f3460;');
+console.log('%c👋 Hi there!', 'font-size: 20px; font-weight: bold; color: #4a9fd8;');
+console.log('%cLooking at the code? This portfolio was built with HTML, CSS, and vanilla JavaScript.', 'font-size: 14px; color: #5a6c7d;');
+console.log('%cFeel free to reach out: Kundanjaiswal233@gmail.com', 'font-size: 14px; color: #3a7ca5;');
