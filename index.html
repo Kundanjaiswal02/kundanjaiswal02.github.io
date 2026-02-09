@@ -20,6 +20,7 @@
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#academic-projects" class="nav-link">Academic Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -83,7 +84,7 @@
                     <a href="https://www.linkedin.com/in/kundanjaiswal02/" target="_blank" class="btn btn-outline">Connect on LinkedIn</a>
                 </div>
                 <div class="about-image">
-                    <img src="Headshot1.jpg" alt="Kundan Jaiswal" class="profile-photo">
+                    <img src="./Headshot1.jpg" alt="Kundan Jaiswal" class="profile-photo">
                 </div>
             </div>
         </div>
@@ -260,11 +261,138 @@
         </div>
     </section>
 
+    <!-- Academic Projects Section -->
+    <section id="academic-projects" class="academic-projects-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">06</span>
+                <h2 class="section-title">Academic Projects</h2>
+            </div>
+            <div class="academic-projects-grid">
+                
+                <!-- Project Card: E-Commerce Analysis -->
+                <div class="academic-project-card">
+                    <div class="project-icon">📊</div>
+                    <h3>E-Commerce Sales & Customer Behavior Analysis</h3>
+                    <p class="project-description">
+                        Analyzed 584,000+ e-commerce transactions from Pakistan's largest online retailers 
+                        to uncover customer purchasing patterns, revenue trends, and payment preferences. 
+                        Performed comprehensive data cleaning, statistical analysis, and created interactive 
+                        visualizations to deliver actionable business insights.
+                    </p>
+                    <div class="project-tools">
+                        <span class="tool-tag">R</span>
+                        <span class="tool-tag">Tidyverse</span>
+                        <span class="tool-tag">ggplot2</span>
+                        <span class="tool-tag">Plotly</span>
+                        <span class="tool-tag">Quarto</span>
+                    </div>
+                    <a href="./JAISWAL_KUNDAN_R_FINAL_PROJECT.html" target="_blank" class="btn-view-project">
+                        View Project →
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <style>
+    .academic-projects-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .academic-projects-section .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        color: white;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+
+    .academic-projects-section .section-number {
+        color: rgba(255,255,255,0.7);
+    }
+
+    .academic-projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .academic-project-card {
+        background: white;
+        border-radius: 15px;
+        padding: 35px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .academic-project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+
+    .academic-project-card .project-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .academic-project-card h3 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    .project-description {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        font-size: 0.95rem;
+    }
+
+    .project-tools {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 25px;
+    }
+
+    .tool-tag {
+        background: #667eea;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+
+    .btn-view-project {
+        display: inline-block;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 12px 30px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-view-project:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        color: white;
+    }
+    </style>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <span class="section-number">06</span>
+                <span class="section-number">07</span>
                 <h2 class="section-title">Let's Connect</h2>
             </div>
             <div class="contact-content">
@@ -317,123 +445,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <!-- Academic Projects Section -->
-<section id="academic-projects" class="academic-projects-section">
-    <div class="container">
-        <h2 class="section-title">Academic Projects</h2>
-        <div class="projects-grid">
-            
-            <!-- Project Card: E-Commerce Analysis -->
-            <div class="project-card">
-                <div class="project-icon">📊</div>
-                <h3>E-Commerce Sales & Customer Behavior Analysis</h3>
-                <p class="project-description">
-                    Analyzed 584,000+ e-commerce transactions from Pakistan's largest online retailers 
-                    to uncover customer purchasing patterns, revenue trends, and payment preferences. 
-                    Performed comprehensive data cleaning, statistical analysis, and created interactive 
-                    visualizations to deliver actionable business insights.
-                </p>
-                <div class="project-tools">
-                    <span class="tool-tag">R</span>
-                    <span class="tool-tag">Tidyverse</span>
-                    <span class="tool-tag">ggplot2</span>
-                    <span class="tool-tag">Plotly</span>
-                    <span class="tool-tag">Quarto</span>
-                </div>
-                <a href="JAISWAL_KUNDAN_R_FINAL_PROJECT.html" target="_blank" class="btn-view-project">
-                    View Project →
-                </a>
-            </div>
-            
-        </div>
-    </div>
-</section>
-
-<style>
-.academic-projects-section {
-    padding: 80px 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.academic-projects-section .section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: white;
-    margin-bottom: 50px;
-    font-weight: 700;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.project-card {
-    background: white;
-    border-radius: 15px;
-    padding: 35px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-}
-
-.project-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.project-card h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.project-description {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
-}
-
-.project-tools {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 25px;
-}
-
-.tool-tag {
-    background: #667eea;
-    color: white;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
-}
-
-.btn-view-project {
-    display: inline-block;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 12px 30px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn-view-project:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-}
-</style>
 </body>
 </html>
