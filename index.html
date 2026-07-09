@@ -194,28 +194,6 @@
     @keyframes fadeIn {
       to { opacity: 1; }
     }
-    .scroll-hint {
-      position: absolute;
-      right: 48px;
-      bottom: 48px;
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gray);
-      writing-mode: vertical-rl;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      opacity: 0;
-      animation: fadeIn 1s ease 1.2s forwards;
-    }
-    .scroll-hint::after {
-      content: '';
-      width: 1px;
-      height: 48px;
-      background: var(--gray);
-    }
-
     /* MARQUEE */
     .marquee-section {
       border-top: 1px solid var(--border);
@@ -226,6 +204,7 @@
     }
     .marquee-track {
       display: flex;
+      width: max-content;
       gap: 0;
       animation: marquee 4s linear infinite;
       white-space: nowrap;
@@ -234,7 +213,7 @@
       display: flex;
       align-items: center;
       gap: 40px;
-      padding-right: 40px;
+      padding-right: 80px;
       font-size: clamp(36px, 5vw, 58px);
       font-weight: 900;
       text-transform: uppercase;
@@ -652,7 +631,6 @@
       .exp-item { grid-template-columns: 1fr; gap: 8px; }
       footer { flex-direction: column; gap: 16px; text-align: center; }
       .contact-info { flex-direction: column; gap: 16px; align-items: flex-start; }
-      .scroll-hint { display: none; }
     }
   </style>
 </head>
@@ -689,7 +667,6 @@
       <p class="hero-desc">A Business Analyst obsessed with the space between messy operational data and clean, confident decisions that move organisations forward.</p>
       <div class="hero-status">Available for 6-month internship</div>
     </div>
-    <div class="scroll-hint">Scroll</div>
   </section>
 
   <!-- MARQUEE -->
