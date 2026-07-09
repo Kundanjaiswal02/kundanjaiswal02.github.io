@@ -667,7 +667,7 @@
     </div>
     <div class="hero-bottom">
       <p class="hero-desc">A Business Analyst obsessed with the space between messy operational data and clean, confident decisions that move organisations forward.</p>
-      <div class="hero-status">Available for 6-month internship — 2025/2026</div>
+      <div class="hero-status">Available for 6-month internship</div>
     </div>
     <div class="scroll-hint">Scroll</div>
   </section>
@@ -922,13 +922,13 @@
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
 
-    // Contact text scroll effect (filled → outlined)
+    // Contact text scroll effect (filled → outlined when fully visible)
     const contactText = document.getElementById('contactText');
     const contactSection = document.getElementById('contact');
     window.addEventListener('scroll', () => {
-      const rect = contactSection.getBoundingClientRect();
-      const progress = Math.max(0, Math.min(1, -rect.top / (rect.height * 0.5)));
-      if (progress > 0.3) {
+      const rect = contactText.getBoundingClientRect();
+      const fullyVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+      if (fullyVisible) {
         contactText.classList.remove('filled');
         contactText.classList.add('outlined');
       } else {
