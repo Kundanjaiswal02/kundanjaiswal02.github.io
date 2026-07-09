@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kundan Jaiswal — Business Analyst</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Barlow+Condensed:wght@700;800;900&family=Orbitron:wght@700;800;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -80,7 +80,7 @@
       color: var(--white);
       text-decoration: none;
     }
-    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links { display: flex; gap: 40px; list-style: none; align-items: center; }
     .nav-links a {
       font-size: 11px;
       letter-spacing: 0.15em;
@@ -90,6 +90,18 @@
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--white); }
+    .nav-resume {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white) !important;
+      background: var(--blue);
+      padding: 8px 20px;
+      text-decoration: none;
+      border: 1px solid var(--blue);
+      transition: background 0.2s !important;
+    }
+    .nav-resume:hover { background: transparent !important; color: var(--blue) !important; }
 
     /* HERO */
     #hero {
@@ -208,30 +220,36 @@
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       overflow: hidden;
-      padding: 20px 0;
+      padding: 24px 0;
       background: var(--dark);
     }
     .marquee-track {
       display: flex;
       gap: 0;
-      animation: marquee 18s linear infinite;
+      animation: marquee 12s linear infinite;
       white-space: nowrap;
     }
     .marquee-item {
       display: flex;
       align-items: center;
-      gap: 32px;
-      padding-right: 32px;
-      font-family: var(--font-display);
-      font-size: clamp(28px, 4vw, 48px);
-      font-weight: 800;
+      gap: 40px;
+      padding-right: 40px;
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.02em;
     }
-    .marquee-item .filled { color: var(--white); }
+    .marquee-item .filled {
+      color: var(--white);
+      font-family: var(--font-display);
+      letter-spacing: 0.04em;
+    }
     .marquee-item .outline {
       color: transparent;
-      -webkit-text-stroke: 1.5px rgba(255,255,255,0.3);
+      font-family: 'Orbitron', sans-serif;
+      -webkit-text-stroke: 1.5px rgba(255,255,255,0.5);
+      letter-spacing: 0.08em;
+      font-size: 0.82em;
     }
     .marquee-diamond {
       color: var(--blue);
@@ -652,6 +670,7 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="Kundan_JAISWAL_CV_.pdf" target="_blank" class="nav-resume">Resume</a></li>
     </ul>
   </nav>
 
@@ -669,6 +688,7 @@
       <p class="hero-desc">A Business Analyst obsessed with the space between messy operational data and clean, confident decisions that move organisations forward.</p>
       <div class="hero-status">Available for 6-month internship</div>
     </div>
+    <div class="scroll-hint">Scroll</div>
   </section>
 
   <!-- MARQUEE -->
