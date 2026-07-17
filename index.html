@@ -91,19 +91,6 @@
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--white); }
-    .nav-resume {
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--white) !important;
-      background: var(--blue);
-      padding: 8px 20px;
-      text-decoration: none;
-      border: 1px solid var(--blue);
-      transition: background 0.2s !important;
-    }
-    .nav-resume:hover { background: transparent !important; color: var(--blue) !important; }
-
     /* HERO */
     #hero {
       min-height: 100vh;
@@ -436,6 +423,22 @@
       content: '▪';
       color: var(--blue);
     }
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--blue);
+      padding: 10px 22px;
+      text-decoration: none;
+      border: 1px solid var(--blue);
+      transition: background 0.2s, color 0.2s;
+    }
+    .project-link:hover { background: transparent; color: var(--blue); }
 
     /* SKILLS */
     #skills { background: var(--dark); }
@@ -649,7 +652,6 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="Kundan_JAISWAL_CV_.pdf" target="_blank" class="nav-resume">Resume</a></li>
     </ul>
   </nav>
 
@@ -730,11 +732,34 @@
 
     <div class="project-item reveal">
       <div class="project-image">
+        <div class="project-image-inner">
+          <span class="project-image-icon">📊</span>
+        </div>
+        <div class="project-tag">Python / E-Commerce Analytics</div>
+      </div>
+      <div class="project-content">
+        <div class="project-num">01</div>
+        <h3 class="project-title">E-Commerce Sales Analysis: Order Cancellations & Revenue Optimization</h3>
+        <p class="project-desc">Analyzed 1M+ e-commerce transactions from Pakistan's largest online marketplace to identify factors driving order cancellations and uncover revenue optimization opportunities. Found 19% cancellation rate representing ~475M PKR in lost revenue.</p>
+        <div class="project-tags">
+          <span class="project-tag-item">Python</span>
+          <span class="project-tag-item">Pandas</span>
+          <span class="project-tag-item">Matplotlib</span>
+          <span class="project-tag-item">Seaborn</span>
+          <span class="project-tag-item">EDA</span>
+        </div>
+        <div class="project-result">475M PKR in lost revenue identified</div>
+        <a class="project-link" href="E-Commerce Sales Analysis.pdf" target="_blank">View Project</a>
+      </div>
+    </div>
+
+    <div class="project-item reverse reveal">
+      <div class="project-image">
         <img class="project-image-inner" src="CX Segmentation and RFM Analysis Visual.webp" alt="Customer Segmentation & RFM Analysis" style="width:100%; height:100%; object-fit:cover;" />
         <div class="project-tag">Analytics / Python</div>
       </div>
       <div class="project-content">
-        <div class="project-num">01</div>
+        <div class="project-num">02</div>
         <h3 class="project-title">Customer Segmentation & RFM Analysis</h3>
         <p class="project-desc">Segmented 500K+ retail customers using Python and R with RFM framework to identify high-value segments and retention opportunities. Results visualised in an interactive Power BI dashboard.</p>
         <div class="project-tags">
@@ -747,13 +772,13 @@
       </div>
     </div>
 
-    <div class="project-item reverse reveal">
+    <div class="project-item reveal">
       <div class="project-image">
         <img class="project-image-inner" src="sales performance analysis and forecasting cover image.jpg" alt="Sales Performance Analysis & Forecasting" style="width:100%; height:100%; object-fit:cover;" />
         <div class="project-tag">Retail / Forecasting</div>
       </div>
       <div class="project-content">
-        <div class="project-num">02</div>
+        <div class="project-num">03</div>
         <h3 class="project-title">Sales Performance Analysis & Forecasting</h3>
         <p class="project-desc">Analysed retail sales data using Python and R (ARIMA forecasting), building an interactive Power BI dashboard and Excel scenario planner to identify revenue opportunities and optimise forecasting accuracy.</p>
         <div class="project-tags">
