@@ -96,9 +96,13 @@
     #hero {
       min-height: 100vh;
       padding: 160px 48px 80px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      display: grid;
+      /* photo centre lines up under the "Dashboards" nav link (~529px from the right edge) */
+      grid-template-columns: calc(100% - 671px) 380px;
+      grid-template-rows: 1fr auto;
+      grid-template-areas:
+        "text   photo"
+        "bottom photo";
       position: relative;
       overflow: hidden;
     }
@@ -128,31 +132,17 @@
       text-transform: uppercase;
       overflow: hidden;
     }
-    .hero-main {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 64px;
-      align-items: center;
-    }
+    .hero-text { grid-area: text; align-self: center; }
     .hero-photo {
-      position: relative;
+      grid-area: photo;
+      align-self: center;
       width: 380px;
       max-width: 100%;
-      margin-right: 14px;
+      margin: 40px 0;
       opacity: 0;
       animation: fadeIn 1s ease 0.6s forwards;
     }
-    .hero-photo::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border: 1px solid var(--blue);
-      transform: translate(14px, 14px);
-      z-index: 0;
-    }
     .hero-photo img {
-      position: relative;
-      z-index: 1;
       display: block;
       width: 100%;
       aspect-ratio: 4/5;
@@ -176,6 +166,7 @@
     }
 
     .hero-bottom {
+      grid-area: bottom;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
@@ -188,28 +179,6 @@
       color: var(--light-gray);
       opacity: 0;
       animation: fadeIn 1s ease 0.8s forwards;
-    }
-    .hero-status {
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gray);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      opacity: 0;
-      animation: fadeIn 1s ease 1s forwards;
-    }
-    .hero-status::before {
-      content: '';
-      width: 6px; height: 6px;
-      background: var(--blue);
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
     }
     @keyframes fadeIn {
       to { opacity: 1; }
@@ -282,13 +251,7 @@
       align-items: flex-end;
       margin-bottom: 80px;
     }
-    .work-desc {
-      max-width: 300px;
-      font-size: 13px;
-      line-height: 1.7;
-      color: var(--gray);
-      text-align: right;
-    }
+    #dashboards .work-header { margin-bottom: 32px; }
     .project-item {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -437,7 +400,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 1px;
       background: var(--border);
-      margin-top: 80px;
+      margin-top: 32px;
       border: 1px solid var(--border);
     }
     .skill-card {
@@ -467,7 +430,7 @@
 
     /* EXPERIENCE */
     #experience { background: var(--black); }
-    .exp-list { margin-top: 80px; }
+    .exp-list { margin-top: 32px; }
     .exp-item {
       display: grid;
       grid-template-columns: 200px 1fr;
@@ -564,8 +527,9 @@
     }
     .contact-info {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
       margin-top: 64px;
       padding-top: 40px;
       border-top: 1px solid var(--border);
@@ -577,6 +541,16 @@
       transition: color 0.2s;
     }
     .contact-email:hover { color: var(--blue); }
+    .contact-linkedin {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-linkedin:hover { color: var(--blue); }
     .contact-phone {
       font-size: 14px;
       color: var(--gray);
@@ -610,15 +584,23 @@
     .footer-links a:hover { color: var(--white); }
 
     /* RESPONSIVE */
+    @media (max-width: 1200px) {
+      /* too narrow to align with the nav link without crowding the title */
+      #hero { grid-template-columns: 1fr 380px; column-gap: 48px; }
+    }
     @media (max-width: 1024px) {
       .projects-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 768px) {
       nav { padding: 20px 24px; }
       .nav-links { display: none; }
-      #hero { padding: 120px 24px 60px; }
-      .hero-main { grid-template-columns: 1fr; gap: 40px; }
-      .hero-photo { width: 260px; }
+      #hero {
+        padding: 120px 24px 60px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "text" "bottom" "photo";
+      }
+      .hero-photo { width: 260px; justify-self: center; }
       section { padding: 80px 24px; }
       #about { padding: 48px 24px; }
       .about-principles { grid-template-columns: 1fr; }
@@ -654,22 +636,19 @@
 
   <!-- HERO -->
   <section id="hero">
-    <div class="hero-main">
-      <div>
-        <div class="hero-eyebrow">Business Data Analyst</div>
-        <h1 class="hero-title">
-          <span class="line"><span>Turning Raw</span></span>
-          <span class="line"><span>Data Into</span></span>
-          <span class="line"><span class="blue">Decisions.</span></span>
-        </h1>
-      </div>
-      <div class="hero-photo">
-        <img src="Headshot1.jpg" alt="Kundan Jaiswal">
-      </div>
+    <div class="hero-text">
+      <div class="hero-eyebrow">Business Data Analyst</div>
+      <h1 class="hero-title">
+        <span class="line"><span>Turning Raw</span></span>
+        <span class="line"><span>Data Into</span></span>
+        <span class="line"><span class="blue">Decisions.</span></span>
+      </h1>
+    </div>
+    <div class="hero-photo">
+      <img src="Headshot1.jpg" alt="Kundan Jaiswal">
     </div>
     <div class="hero-bottom">
       <p class="hero-desc">Business Data Analyst with 2+ years of experience turning operational data into reports and dashboards that teams use to make decisions. Currently pursuing an MSc in Business Analytics at NEOMA Business School in Paris.</p>
-      <div class="hero-status">Available for 6-month internship</div>
     </div>
   </section>
 
@@ -699,7 +678,6 @@
         <div class="section-eyebrow">(Projects) — Selected Work</div>
         <h2 class="section-title">Projects</h2>
       </div>
-      <p class="work-desc">Projects where analysis translated directly into measurable business outcomes.</p>
     </div>
 
     <div class="projects-grid">
@@ -745,7 +723,6 @@
   <section id="dashboards" style="background: var(--black);">
     <div class="work-header reveal">
       <div>
-        <div class="section-eyebrow">(Dashboards) — Power BI</div>
         <h2 class="section-title">Dashboards</h2>
       </div>
     </div>
@@ -774,7 +751,6 @@
 
   <!-- SKILLS -->
   <section id="skills">
-    <div class="section-eyebrow reveal">(Skills) — The Toolkit</div>
     <h2 class="section-title reveal">Skills</h2>
     <div class="skills-grid">
       <div class="skill-card reveal">
@@ -812,7 +788,6 @@
 
   <!-- EXPERIENCE -->
   <section id="experience">
-    <div class="section-eyebrow reveal">(Experience) — The Journey</div>
     <h2 class="section-title reveal">The Journey</h2>
     <div class="exp-list">
       <div class="exp-item reveal">
@@ -848,7 +823,6 @@
 
   <!-- EDUCATION -->
   <section id="education" style="background: var(--dark);">
-    <div class="section-eyebrow reveal">(Education) — Academic Background</div>
     <h2 class="section-title reveal">Education</h2>
     <div class="exp-list">
       <div class="exp-item reveal">
@@ -876,6 +850,7 @@
     <div class="contact-big filled" id="contactText">Let's<br>Talk.</div>
     <div class="contact-info reveal">
       <a href="mailto:Kundanjaiswal233@gmail.com" class="contact-email">Kundanjaiswal233@gmail.com</a>
+      <a href="https://www.linkedin.com/in/kundanjaiswal02" target="_blank" rel="noopener" class="contact-linkedin">LinkedIn</a>
     </div>
   </section>
 
