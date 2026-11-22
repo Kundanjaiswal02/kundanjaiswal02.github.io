@@ -121,7 +121,7 @@
     }
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(72px, 12vw, 160px);
+      font-size: clamp(40px, 6.5vw, 88px);
       font-weight: 900;
       line-height: 0.92;
       letter-spacing: -0.02em;
@@ -150,7 +150,7 @@
       margin-top: 60px;
     }
     .hero-desc {
-      max-width: 380px;
+      max-width: 560px;
       font-size: 15px;
       line-height: 1.7;
       color: var(--light-gray);
@@ -182,52 +182,6 @@
     @keyframes fadeIn {
       to { opacity: 1; }
     }
-    /* MARQUEE */
-    .marquee-section {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      overflow: hidden;
-      padding: 24px 0;
-      background: var(--dark);
-    }
-    .marquee-track {
-      display: flex;
-      width: max-content;
-      gap: 0;
-      animation: marquee 10s linear infinite;
-      white-space: nowrap;
-    }
-    .marquee-item {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      padding-right: 80px;
-      font-size: clamp(36px, 5vw, 58px);
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-    }
-    .marquee-item .filled {
-      color: var(--white);
-      font-family: var(--font-display);
-      letter-spacing: 0.04em;
-    }
-    .marquee-item .outline {
-      color: transparent;
-      font-family: 'Orbitron', sans-serif;
-      -webkit-text-stroke: 1.5px rgba(255,255,255,0.5);
-      letter-spacing: 0.08em;
-      font-size: 0.82em;
-    }
-    .marquee-diamond {
-      color: var(--blue);
-      font-size: 1.2em;
-    }
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
     /* SECTIONS COMMON */
     section { padding: 120px 48px; }
     .section-eyebrow {
@@ -295,33 +249,6 @@
     }
     .principle-text strong { color: var(--white); }
     .principle-text a { color: var(--blue); text-decoration: none; }
-
-    /* STATS */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid var(--border);
-      margin-top: 80px;
-    }
-    .stat-item {
-      padding: 40px 32px;
-      border-right: 1px solid var(--border);
-    }
-    .stat-item:last-child { border-right: none; }
-    .stat-num {
-      font-family: var(--font-display);
-      font-size: clamp(40px, 5vw, 64px);
-      font-weight: 900;
-      color: var(--white);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .stat-label {
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gray);
-    }
 
     /* WORK */
     #work { background: var(--black); }
@@ -627,7 +554,6 @@
       #hero { padding: 120px 24px 60px; }
       section { padding: 80px 24px; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .project-item { grid-template-columns: 1fr; }
       .project-item.reverse { direction: ltr; }
       .project-content { padding: 32px 0 0; }
@@ -647,7 +573,7 @@
   <nav id="navbar">
     <a class="nav-logo" href="#">Kundan Jaiswal</a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
+      <li><a href="#about">How I Work</a></li>
       <li><a href="#work">Projects</a></li>
       <li><a href="#dashboards">Dashboards</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -660,7 +586,7 @@
   <!-- HERO -->
   <section id="hero">
     <div>
-      <div class="hero-eyebrow">Business Analyst / Data Strategist</div>
+      <div class="hero-eyebrow">Business Data Analyst</div>
       <h1 class="hero-title">
         <span class="line"><span>Turning Raw</span></span>
         <span class="line"><span>Data Into</span></span>
@@ -668,56 +594,29 @@
       </h1>
     </div>
     <div class="hero-bottom">
-      <p class="hero-desc">A Business Analyst obsessed with the space between messy operational data and clean, confident decisions that move organisations forward.</p>
+      <p class="hero-desc">Business Data Analyst with 2+ years of experience turning operational data into reports and dashboards that teams use to make decisions. Currently pursuing an MSc in Business Analytics at NEOMA Business School in Paris.</p>
       <div class="hero-status">Available for 6-month internship</div>
     </div>
   </section>
 
-  <!-- MARQUEE -->
-  <div class="marquee-section">
-    <div class="marquee-track">
-      <!-- Duplicated once for seamless loop -->
-      <div class="marquee-item"><span class="filled">Stakeholder Management</span> <span class="marquee-diamond">✦</span> <span class="outline">Business Analysis</span> <span class="marquee-diamond">✦</span> <span class="filled">Executive Reporting</span> <span class="marquee-diamond">✦</span> <span class="outline">Data Storytelling</span> <span class="marquee-diamond">✦</span></div>
-      <div class="marquee-item"><span class="filled">Stakeholder Management</span> <span class="marquee-diamond">✦</span> <span class="outline">Business Analysis</span> <span class="marquee-diamond">✦</span> <span class="filled">Executive Reporting</span> <span class="marquee-diamond">✦</span> <span class="outline">Data Storytelling</span> <span class="marquee-diamond">✦</span></div>
-    </div>
-  </div>
-
   <!-- ABOUT -->
   <section id="about">
-    <div class="section-eyebrow reveal">(About) — The Manifesto</div>
+    <div class="section-eyebrow reveal">(How I work)</div>
     <div class="about-grid">
       <div class="about-label reveal">Three principles<br>that guide every<br>engagement.</div>
       <div class="about-principles">
         <div class="reveal">
-          <div class="principle-num">01 — The Philosophy</div>
-          <p class="principle-text">Every organisation already holds the answers it seeks — buried inside its data. My work is the excavation. I translate ambiguity into <strong>structured questions</strong>, and questions into <strong>measurable outcomes</strong>.</p>
+          <div class="principle-num">01 — Start with the question</div>
+          <p class="principle-text">Before building anything, I clarify what the business needs to decide. At TaskUs, that meant turning reporting requests from 5+ teams into documented requirements and Jira tickets for the data engineering team.</p>
         </div>
         <div class="reveal">
-          <div class="principle-num">02 — The Method</div>
-          <p class="principle-text">Bridging the gap between business and engineering, I map processes, define requirements, and model the metrics that actually <a href="#work">move the needle</a>. No vanity dashboards — only <a href="#work">decisions that compound</a>.</p>
+          <div class="principle-num">02 — Make the data trustworthy</div>
+          <p class="principle-text">A report is only useful if people trust it. I reconcile sources and check for duplicates, nulls and missing values before anything is released.</p>
         </div>
         <div class="reveal">
-          <div class="principle-num">03 — The Impact</div>
-          <p class="principle-text">Across fintech and operations at <strong>Mastercard</strong> and <strong>Deliveroo</strong>, I've helped teams recover SLAs from 72% to 96%, build 10+ real-time dashboards, and synthesise 5K+ records into <a href="#work">executive-ready insights</a>.</p>
+          <div class="principle-num">03 — Make it usable</div>
+          <p class="principle-text">On the Mastercard and Deliveroo accounts, I built 10+ Power BI dashboards and recurring SQL reports that Operations managers used to track SLAs, backlogs and delivery KPIs.</p>
         </div>
-      </div>
-    </div>
-    <div class="stats-grid">
-      <div class="stat-item reveal">
-        <div class="stat-num">2+</div>
-        <div class="stat-label">Years Experience</div>
-      </div>
-      <div class="stat-item reveal">
-        <div class="stat-num">500+</div>
-        <div class="stat-label">Dashboards Built</div>
-      </div>
-      <div class="stat-item reveal">
-        <div class="stat-num">5K+</div>
-        <div class="stat-label">Records Analysed Daily</div>
-      </div>
-      <div class="stat-item reveal">
-        <div class="stat-num">96%</div>
-        <div class="stat-label">SLA Recovered</div>
       </div>
     </div>
   </section>
@@ -773,44 +672,6 @@
         <a class="project-link" href="E-Commerce Sales and Customer Behavior Analysis.pdf" target="_blank">View Full Project</a>
       </div>
     </div>
-
-    <div class="project-item reveal">
-      <div class="project-image">
-        <img class="project-image-inner" src="CX Segmentation and RFM Analysis Visual.webp" alt="Customer Segmentation & RFM Analysis" style="width:100%; height:100%; object-fit:cover;" />
-        <div class="project-tag">Analytics / Python</div>
-      </div>
-      <div class="project-content">
-        <div class="project-num">03</div>
-        <h3 class="project-title">Customer Segmentation & RFM Analysis</h3>
-        <p class="project-desc">Segmented 500K+ retail customers using Python and R with RFM framework to identify high-value segments and retention opportunities. Results visualised in an interactive Power BI dashboard.</p>
-        <div class="project-tags">
-          <span class="project-tag-item">Python</span>
-          <span class="project-tag-item">R</span>
-          <span class="project-tag-item">Power BI</span>
-          <span class="project-tag-item">RFM Framework</span>
-        </div>
-        <div class="project-result">500K+ customers segmented</div>
-      </div>
-    </div>
-
-    <div class="project-item reverse reveal">
-      <div class="project-image">
-        <img class="project-image-inner" src="sales performance analysis and forecasting cover image.jpg" alt="Sales Performance Analysis & Forecasting" style="width:100%; height:100%; object-fit:cover;" />
-        <div class="project-tag">Retail / Forecasting</div>
-      </div>
-      <div class="project-content">
-        <div class="project-num">04</div>
-        <h3 class="project-title">Sales Performance Analysis & Forecasting</h3>
-        <p class="project-desc">Analysed retail sales data using Python and R (ARIMA forecasting), building an interactive Power BI dashboard and Excel scenario planner to identify revenue opportunities and optimise forecasting accuracy.</p>
-        <div class="project-tags">
-          <span class="project-tag-item">Python</span>
-          <span class="project-tag-item">ARIMA</span>
-          <span class="project-tag-item">Power BI</span>
-          <span class="project-tag-item">Excel</span>
-        </div>
-        <div class="project-result">Optimised forecasting accuracy</div>
-      </div>
-    </div>
   </section>
 
   <!-- DASHBOARDS -->
@@ -850,34 +711,34 @@
     <h2 class="section-title reveal">Skills</h2>
     <div class="skills-grid">
       <div class="skill-card reveal">
-        <div class="skill-cat">Analytics & BI</div>
-        <div class="skill-name">SQL / Python / R</div>
-        <div class="skill-desc">Advanced querying, pandas, statistical modelling, and automation across large datasets.</div>
+        <div class="skill-cat">Analytics</div>
+        <div class="skill-name">SQL / Python</div>
+        <div class="skill-desc">Joins, CTEs and window functions in PostgreSQL and BigQuery. Python (pandas) for API data extraction, cleaning and A/B test design.</div>
       </div>
       <div class="skill-card reveal">
         <div class="skill-cat">Visualisation</div>
-        <div class="skill-name">Power BI / Tableau</div>
-        <div class="skill-desc">Executive-grade decision dashboards and real-time KPI tracking for operational teams.</div>
+        <div class="skill-name">Power BI / Looker Studio</div>
+        <div class="skill-desc">Power BI dashboards built with DAX and related data tables for operational KPI tracking. Looker Studio dashboards connected to BigQuery.</div>
       </div>
       <div class="skill-card reveal">
         <div class="skill-cat">Platforms</div>
-        <div class="skill-name">Salesforce / Excel</div>
-        <div class="skill-desc">CRM analytics, SLA reporting, and advanced Excel modelling with scenario planners.</div>
+        <div class="skill-name">Salesforce / Excel / Jira</div>
+        <div class="skill-desc">Salesforce CRM case data extracted through APIs, Excel trackers and reporting, Jira for requirement tracking.</div>
       </div>
       <div class="skill-card reveal">
         <div class="skill-cat">Process</div>
         <div class="skill-name">Agile / Scrum</div>
-        <div class="skill-desc">Scrum ceremonies, 3-week sprint cycles, and Jira-based delivery across cross-functional teams.</div>
+        <div class="skill-desc">3-week sprints, user testing and Jira-based delivery with data engineering and operations teams.</div>
       </div>
       <div class="skill-card reveal">
         <div class="skill-cat">Core Competency</div>
-        <div class="skill-name">Requirements Engineering</div>
-        <div class="skill-desc">BRDs, functional specs, user stories, and acceptance criteria leaving zero room for interpretation.</div>
+        <div class="skill-name">Requirements Gathering</div>
+        <div class="skill-desc">Translating reporting needs from 5+ teams into documented requests and tracked deliverables.</div>
       </div>
       <div class="skill-card reveal">
         <div class="skill-cat">Communication</div>
-        <div class="skill-name">Data Storytelling</div>
-        <div class="skill-desc">Translating complex analysis into executive narratives that drive organisational change and buy-in.</div>
+        <div class="skill-name">Stakeholder Reporting</div>
+        <div class="skill-desc">Daily, weekly and monthly management reports, with root-cause findings presented in operational and business reviews.</div>
       </div>
     </div>
   </section>
@@ -891,14 +752,13 @@
         <div class="exp-date">Aug 2022 — Mar 2023</div>
         <div>
           <div class="exp-role">Data Analyst</div>
-          <div class="exp-company">Teleperformance — Mastercard Fintech Account</div>
+          <div class="exp-company">Teleperformance — Mastercard FinTech Account</div>
           <ul class="exp-bullets">
-            <li>Owned reporting in Salesforce and Excel, exporting Salesforce data into Excel pivot tables to automate 1 to 2 recurring reports, cutting preparation time by about 60%.</li>
-            <li>Ran root cause analysis on client escalations, system or tool issues and quality or SLA misses in Salesforce case data, identifying the top 3 drivers and reducing issue recurrence by 50%.</li>
-            <li>Led cross-functional coordination across Operations, IT, WFM, and Training teams to onboard a new Line of Business, reducing overdue cases by 80% and delivering SLA recovery from 72% to 96% within the ramp-up period.</li>
-            <li>Built Power BI dashboards tracking SLA, escalations and open cases, quality scores and handling time for 4 to 5 managers.</li>
-            <li>Built variance and trend views in Power BI and Excel (actual vs SLA target, vs previous month) so managers could act before an SLA breach and review performance in meetings.</li>
-            <li>Wrote requirements for a tracking or reporting change and tested it with managers before rollout.</li>
+            <li>Used Python to extract operational data from Salesforce CRM and Mastercard portals through APIs, then cleaned and standardised datasets for analysis and recurring reporting.</li>
+            <li>Wrote PostgreSQL queries to join operational case data and monitor SLA compliance, resolution rates, backlogs and recurring issues across ACS and Fraud operations.</li>
+            <li>Replaced static Excel trackers with Power BI dashboards using DAX and multiple data tables to help Operations teams and managers monitor performance and team KPIs.</li>
+            <li>Analysed case logs to identify trends in card declines, digital wallet provisioning errors and chargebacks, sharing root-cause findings with managers for operational reviews.</li>
+            <li>Prepared daily, weekly and monthly management reports for Operations and Programme Managers.</li>
           </ul>
         </div>
       </div>
@@ -906,17 +766,13 @@
         <div class="exp-date">Oct 2020 — Apr 2022</div>
         <div>
           <div class="exp-role">Business Insights Analyst</div>
-          <div class="exp-company">TaskUS — Deliveroo Operations</div>
+          <div class="exp-company">TaskUs — Deliveroo Operations</div>
           <ul class="exp-bullets">
-            <li>Wrote SQL (joins, aggregations, CTEs and window functions for rankings and period comparisons) to produce weekly and monthly reporting for 8 stakeholders, cutting prep time by 35%.</li>
-            <li>Built 10+ Power BI dashboards on a data model of several related tables, with DAX measures for variance vs target and % change, and scheduled refresh through a gateway.</li>
-            <li>Reconciled 2 to 3 data sources with documented checks (duplicates, nulls and missing values), catching discrepancies before release.</li>
-            <li>Translated needs from 5+ teams into written requirements documents and a tracked list of requests in Jira and an Excel tracker, aligning with data engineering.</li>
-            <li>Delivered reporting in 3-week sprints with daily stand-ups and sprint planning, testing major releases with users and fixing issues as found before go-live.</li>
-            <li>Modelled Deliveroo operational data (orders, riders, restaurants, dates) into related tables in Power BI, defining relationships and granularity so 2 to 3 teams reported from one consistent dataset.</li>
-            <li>Used SQL window functions and CTEs to compare periods (week over week, month over month) across 6 to 10 operational KPIs.</li>
-            <li>Built DAX measures for variance vs target and % change, so managers could see delivery time, order accuracy and customer satisfaction gaps at a glance in actual vs target charts.</li>
-            <li>Analysed customer feedback, delivery metrics and satisfaction scores to find the top drivers of poor customer experience, identifying delays (linked to season and tech issues) as the main driver of complaints, and recommending process changes for operations teams in internal and quarterly client business reviews.</li>
+            <li>Developed weekly and monthly SQL reports using joins, aggregations, CTEs and window functions to analyse 6 to 10 operational KPIs for Deliveroo operations across the UK, Ireland and UAE, supporting 8 stakeholders across 5+ teams.</li>
+            <li>Built 10+ Power BI dashboards using related data tables covering orders, riders, restaurants and dates, with DAX measures to track delivery time, order accuracy, customer satisfaction and variance against targets.</li>
+            <li>Reconciled 2 to 3 data sources using validation checks for duplicates, nulls and missing values, identifying discrepancies before reporting release.</li>
+            <li>Translated reporting requirements from 5+ teams into documented requests and Jira and Excel trackers, communicating business needs to data engineering teams and supporting delivery through 3-week Scrum sprints and user testing.</li>
+            <li>Analysed customer feedback, delivery metrics and satisfaction scores to identify delivery delays during seasonal peaks and technical issues as recurring factors associated with complaints, recommending process improvements to Operations teams during business reviews.</li>
           </ul>
         </div>
       </div>
@@ -940,7 +796,7 @@
         <div class="exp-date">2018 — 2021</div>
         <div>
           <div class="exp-role">Bachelor of Commerce</div>
-          <div class="exp-company">Astral College, India</div>
+          <div class="exp-company">Astral Institute of Management Studies, India</div>
           <p class="exp-desc">Foundation in business, commerce, and analytical thinking.</p>
         </div>
       </div>
