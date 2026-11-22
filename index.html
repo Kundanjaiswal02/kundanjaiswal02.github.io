@@ -128,6 +128,38 @@
       text-transform: uppercase;
       overflow: hidden;
     }
+    .hero-main {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-photo {
+      position: relative;
+      width: 380px;
+      max-width: 100%;
+      margin-right: 14px;
+      opacity: 0;
+      animation: fadeIn 1s ease 0.6s forwards;
+    }
+    .hero-photo::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid var(--blue);
+      transform: translate(14px, 14px);
+      z-index: 0;
+    }
+    .hero-photo img {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
     .hero-title .line { display: block; overflow: hidden; }
     .hero-title .line span {
       display: block;
@@ -220,21 +252,13 @@
     }
 
     /* ABOUT */
-    #about { background: var(--dark); }
-    .about-grid {
+    #about { background: var(--dark); padding: 64px 48px; }
+    #about .section-eyebrow { margin-bottom: 32px; }
+    .about-principles {
       display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 80px;
-      margin-top: 80px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
     }
-    .about-label {
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gray);
-      line-height: 1.6;
-    }
-    .about-principles { display: flex; flex-direction: column; gap: 48px; }
     .principle-num {
       font-size: 11px;
       letter-spacing: 0.15em;
@@ -243,7 +267,7 @@
       margin-bottom: 12px;
     }
     .principle-text {
-      font-size: clamp(18px, 2.2vw, 26px);
+      font-size: clamp(15px, 1.4vw, 18px);
       line-height: 1.55;
       color: var(--light-gray);
     }
@@ -367,6 +391,44 @@
       transition: background 0.2s, color 0.2s;
     }
     .project-link:hover { background: transparent; color: var(--blue); }
+
+    /* PROJECT CARDS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 20px;
+      transition: opacity 0.8s ease, transform 0.3s ease, border-color 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--blue);
+    }
+    .project-card.reveal.visible:hover { transform: translateY(-6px); }
+    .project-card-thumb {
+      position: relative;
+      aspect-ratio: 16/10;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      background: var(--dark);
+    }
+    .project-card-thumb img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .project-card .project-title { font-size: clamp(18px, 1.6vw, 22px); }
+    .project-card .project-desc { font-size: 13px; color: var(--gray); }
+    .project-card .project-link { margin-top: auto; align-self: flex-start; }
+    .project-card .project-result { margin-bottom: 24px; }
 
     /* SKILLS */
     #skills { background: var(--dark); }
@@ -548,12 +610,19 @@
     .footer-links a:hover { color: var(--white); }
 
     /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 768px) {
       nav { padding: 20px 24px; }
       .nav-links { display: none; }
       #hero { padding: 120px 24px 60px; }
+      .hero-main { grid-template-columns: 1fr; gap: 40px; }
+      .hero-photo { width: 260px; }
       section { padding: 80px 24px; }
-      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      #about { padding: 48px 24px; }
+      .about-principles { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
       .project-item { grid-template-columns: 1fr; }
       .project-item.reverse { direction: ltr; }
       .project-content { padding: 32px 0 0; }
@@ -585,13 +654,18 @@
 
   <!-- HERO -->
   <section id="hero">
-    <div>
-      <div class="hero-eyebrow">Business Data Analyst</div>
-      <h1 class="hero-title">
-        <span class="line"><span>Turning Raw</span></span>
-        <span class="line"><span>Data Into</span></span>
-        <span class="line"><span class="blue">Decisions.</span></span>
-      </h1>
+    <div class="hero-main">
+      <div>
+        <div class="hero-eyebrow">Business Data Analyst</div>
+        <h1 class="hero-title">
+          <span class="line"><span>Turning Raw</span></span>
+          <span class="line"><span>Data Into</span></span>
+          <span class="line"><span class="blue">Decisions.</span></span>
+        </h1>
+      </div>
+      <div class="hero-photo">
+        <img src="Headshot1.jpg" alt="Kundan Jaiswal">
+      </div>
     </div>
     <div class="hero-bottom">
       <p class="hero-desc">Business Data Analyst with 2+ years of experience turning operational data into reports and dashboards that teams use to make decisions. Currently pursuing an MSc in Business Analytics at NEOMA Business School in Paris.</p>
@@ -602,8 +676,6 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="section-eyebrow reveal">(How I work)</div>
-    <div class="about-grid">
-      <div class="about-label reveal">Three principles<br>that guide every<br>engagement.</div>
       <div class="about-principles">
         <div class="reveal">
           <div class="principle-num">01 — Start with the question</div>
@@ -618,7 +690,6 @@
           <p class="principle-text">On the Mastercard and Deliveroo accounts, I built 10+ Power BI dashboards and recurring SQL reports that Operations managers used to track SLAs, backlogs and delivery KPIs.</p>
         </div>
       </div>
-    </div>
   </section>
 
   <!-- WORK -->
@@ -631,13 +702,12 @@
       <p class="work-desc">Projects where analysis translated directly into measurable business outcomes.</p>
     </div>
 
-    <div class="project-item reveal">
-      <div class="project-image">
-        <img class="project-image-inner" src="py1.jpg" alt="E-Commerce Sales Analysis: Order Cancellations & Revenue Optimization" style="width:100%; height:100%; object-fit:cover;" />
+    <div class="projects-grid">
+    <div class="project-card reveal">
+      <div class="project-card-thumb">
+        <img src="py1.jpg" alt="E-Commerce Sales Analysis: Order Cancellations & Revenue Optimization" />
         <div class="project-tag">Python / E-Commerce Analytics</div>
       </div>
-      <div class="project-content">
-        <div class="project-num">01</div>
         <h3 class="project-title">E-Commerce Sales Analysis: Order Cancellations & Revenue Optimization</h3>
         <p class="project-desc">Analyzed 1M+ e-commerce transactions from Pakistan's largest online marketplace to identify factors driving order cancellations and uncover revenue optimization opportunities. Found 19% cancellation rate representing ~475M PKR in lost revenue.</p>
         <div class="project-tags">
@@ -649,16 +719,13 @@
         </div>
         <div class="project-result">475M PKR in lost revenue identified</div>
         <a class="project-link" href="E-Commerce Sales Analysis.pdf" target="_blank">View Full Project</a>
-      </div>
     </div>
 
-    <div class="project-item reverse reveal">
-      <div class="project-image">
-        <img class="project-image-inner" src="CBA_R.jpg" alt="E-Commerce Sales and Customer Behavior Analysis" style="width:100%; height:100%; object-fit:cover;" />
+    <div class="project-card reveal">
+      <div class="project-card-thumb">
+        <img src="CBA_R.jpg" alt="E-Commerce Sales and Customer Behavior Analysis" />
         <div class="project-tag">R / E-Commerce Analytics</div>
       </div>
-      <div class="project-content">
-        <div class="project-num">02</div>
         <h3 class="project-title">E-Commerce Sales and Customer Behavior Analysis</h3>
         <p class="project-desc">Analyzed 584,000+ e-commerce transactions from Pakistan's largest online retailers to uncover customer purchasing patterns, revenue trends, and payment preferences using R and modern data science practices.</p>
         <div class="project-tags">
@@ -670,7 +737,7 @@
         </div>
         <div class="project-result">584K+ transactions analyzed across 2016-2018</div>
         <a class="project-link" href="E-Commerce Sales and Customer Behavior Analysis.pdf" target="_blank">View Full Project</a>
-      </div>
+    </div>
     </div>
   </section>
 
