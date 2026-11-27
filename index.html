@@ -392,9 +392,11 @@
     .project-card .project-desc { font-size: 13px; color: var(--gray); }
     .project-card .project-link { margin-top: auto; align-self: flex-start; }
     .project-card .project-result { margin-bottom: 24px; }
-    .project-card .project-actions { margin-top: auto; display: flex; align-items: center; gap: 14px; }
-    .project-card .project-actions .project-link { margin-top: 0; }
-    .project-gh { display: inline-flex; color: var(--gray); transition: color 0.2s; }
+    .project-actions { display: flex; align-items: center; gap: 14px; }
+    .project-actions .project-link { margin-top: 0; }
+    .project-card .project-actions { margin-top: auto; }
+    .project-item .project-actions { margin-top: 24px; }
+    .project-gh { display: inline-flex; align-items: center; margin: 0; padding: 0; color: var(--gray); transition: color 0.2s; }
     .project-gh:hover { color: var(--blue); }
     .project-gh svg { width: 22px; height: 22px; display: block; }
 
@@ -772,7 +774,7 @@
           <span class="project-tag-item">Data Storytelling</span>
         </div>
         <div class="project-result">Leiden: about 2.7× Amsterdam's accidents per km of cycling infrastructure</div>
-        <div class="project-actions" style="display:flex; align-items:center; gap:14px;">
+        <div class="project-actions">
           <a class="project-link" href="https://github.com/Kundanjaiswal02/Dutch-Cycling-Safety-PowerBI" target="_blank" rel="noopener">View Full Project</a>
           <a class="project-gh" href="https://github.com/Kundanjaiswal02/Dutch-Cycling-Safety-PowerBI" target="_blank" rel="noopener" aria-label="View on GitHub">
             <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
